@@ -103,7 +103,7 @@ public class CategoryController  extends HttpServlet{
 			//chuyen  ve view
 			resp.sendRedirect(req.getContextPath()+"/admin/categories");
 		}else if (url.contains("update")) {
-			int id = Integer.parseInt(req.getParameter("cateid"));
+			int id = Integer.parseInt(req.getParameter("categoryid"));
 			String categoryname = req.getParameter("categoryname");
 			String image = req.getParameter("image");
 			int status = Integer.parseInt(req.getParameter("status"));

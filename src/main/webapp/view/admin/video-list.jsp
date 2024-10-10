@@ -15,22 +15,24 @@
 	<c:forEach items="${listvid}" var="vid" varStatus="STT">
 		<tr>
 			<td>${STT.index+1 }</td>
+			<td>${vid.title }</td>
+			<td>${vid.description }</td>
 			<td>
 				<c:if test = "${vid.poster.substring(0,5)  != 'https'}" >
-					<c:url value="/image?fname=${cate.poster}" var="imgUrl"></c:url>
+					<c:url value="/image?fname=${vid.poster}" var="imgUrl"></c:url>
 				</c:if>
 				<c:if test = "${vid.poster.substring(0,5)  == 'https'}" >
 					<c:url value="${vid.poster}" var="imgUrl"></c:url>
 				</c:if>
 					<img height="150" width="200" src="${imgUrl}" />
 			</td>
+			<td>${vid.views }</td>
 			
 			
-			<td>${cate.categoryname }</td>
 			<td>${vid.active ? "hoat dong" : "dung hoat dong"}</td>
 			<td><a
-				href="<c:url value='/admin/category/edit?id=${vid.videoid }'/>">Sửa</a>
-				| <a href="<c:url value='/admin/category/delete?id=${vid.videoid }'/>">Xóa</a></td>
+				href="<c:url value='/admin/video/edit?id=${vid.videoid }'/>">Sửa</a>
+				| <a href="<c:url value='/admin/video/delete?id=${vid.videoid }'/>">Xóa</a></td>
 		</tr>
 	</c:forEach>
 </table>

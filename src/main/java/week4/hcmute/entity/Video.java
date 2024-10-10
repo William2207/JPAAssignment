@@ -12,14 +12,14 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 @Table(name = "Videos")
-@NamedQuery(name = "Videos.findAll", query = "SELECT c FROM Category c")
+@NamedQuery(name = "Video.findAll", query = "SELECT c FROM Video c")
 public class Video implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column(name = "VideoId")
-	private String videoId;
+	private String videoid;
 	
 	@Column(name = "Active")
 	private boolean active;

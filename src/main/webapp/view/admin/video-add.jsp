@@ -4,7 +4,8 @@
     
 <form action="${pageContext.request.contextPath }/admin/video/insert" method="post" enctype="multipart/form-data">
   
-  
+  <label for="fname"> Video ID:</label><br>
+  <input type="text" id="videoid" name="videoid"><br>
   <label for="fname"> Title name:</label><br>
   <input type="text" id="titlename" name="titlename"><br>
   <label for="lname">Link Images:</label><br>
